@@ -710,7 +710,7 @@ footer {
     margin-top: 20px;
 }
 .pop{
-    /* visibility: hidden; */
+    visibility: hidden;
     position: absolute;
     background-color: white;
     height: 420px;
