@@ -1,0 +1,381 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="{% static 'j.js' %}"></script>
+
+</head>
+
+<body>
+   
+    <nav>
+
+        <a href="#home" class="logo">P T Service</a>
+        <ul id="navLinks">
+            <i class="ri-arrow-left-fill arrow" onclick="hidemenu()"> back</i>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <i class="ri-menu-line" onclick="showmenu()"></i>
+    </nav>
+    <div class="whatsapp">
+       <a href="https://wa.me/9953896201?text=Hi,%20I%20am%20Looking%20For%20a%20Cab/Taxi%20Service,%20Can%20You%20Help%20Me%20??"> <img src="{% static 'images/whatsapp.png' %}" alt=""></a>
+    </div>
+     <a href="#home" id="arrow" class="upper-arrow" style="display: none;">
+        <i class="ri-arrow-up-circle-fill"></i>
+     </a>
+    <section id="home" class="home-sec">
+        
+        <div class="left">
+            <div class="text">
+                <h1><span style="color: red;"> Looking </span> To <br> Rent A Car</h1>
+                <p><span style="color: orangered; font-weight: 700;"> Prakash Taxi Service </span>: Your Path to Seamless Journeys and Unforgettable Rides!</p>
+                <a href="tel:9971467542">Call Now</a>
+            </div>
+        </div>
+        <div class="right">
+            <img src="{% static 'images/innova.png' %}" alt="">
+        </div>
+    </section>
+
+    <!-- about section start here -->
+    <section id="about">
+        <!-- <div class="main-form">
+            
+        </div> -->
+        <div class="heading">
+            <h1>About Us</h1>
+            <p>At Prakash Taxi Service, we understand that each customer is unique, and we offer a range of vehicles to
+                suit your preferences and requirements. From sleek sedans for corporate travel to spacious SUVs for
+                family adventures, we've got you covered.</p>
+        </div>
+        <div class="container-fluid">
+            <section class="about" id="aboutSec">
+                <div class="about_img">
+                    <img src="{% static 'images/men.jpg' %}" alt="">
+                </div>
+                <div class="about_content">
+                    <h2>Give Us A Chance</h2>
+                    <p>Welcome to Prakash Taxi Service, where your journey is our priority! At Prakash Taxi Service, we
+                        take pride in providing reliable and convenient car rental solutions tailored to meet your
+                        travel needs. With a fleet of well-maintained vehicles and a commitment to customer
+                        satisfaction, we strive to make every ride with us a seamless and enjoyable experience. <br><br>
+
+                        Founded on the principles of punctuality, professionalism, and passenger comfort, Prakash Taxi
+                        Service is dedicated to exceeding your expectations. Our team of experienced and courteous
+                        drivers ensures that you reach your destination safely and on time, whether it's for business,
+                        leisure, or any special occasion.
+                    </p>
+                    <a href="#about" onclick="show()">Book Now</a>
+                </div>
+                <div id="mainForm">
+                    <form action="" method="POST" id="myForm">
+                        {% csrf_token %}
+                        <h1>Enquery Form</h1>
+                        <div class="entery">
+
+                            <input type="text" required placeholder="Enter Your Name" id="name" name="Name">
+                        </div>
+                        <div class="entery">
+
+                            <input type="text" required placeholder="Enter Pick Up Location" id="pick" name="Pick">
+                        </div>
+                        <div class="entery">
+
+                            <input type="text" required placeholder="Enter Drop location" id="drop" name="Drop">
+                        </div>
+                        <div class="entery">
+                            <input type="number" placeholder="Phone Number" required name="Number">
+                        </div>
+                        <div class="entery">
+                            <input type="submit" class="entery-btn" id="sbmt" onclick="myFunction()">
+                        </div>
+                        <div class="entery">
+                            <input type="button" onclick="cancel()" value="Cancel"
+                                style="background-color: red; color:white; font-weight:700; border:none;">
+                        </div>
+
+                    </form>
+                </div>
+                <div class="pop" id="pop">
+                    <h1>Thanks You <br> For Contact Us❤️</h1>
+                    <p>Your Details has Been Submitted</p>
+                    <button onclick="closePopup()">Close</button>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- about section ends here -->
+    <!-- service section start here -->
+    <section id="service" class="service-sec">
+        <div class="head">
+            <h1>Our Services</h1>
+        </div>
+        <div class="main-row">
+            <div class="row-1">
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/wedding.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> For Wedding</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/outstation.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> For Outstation</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/hillstation.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> For Hillstation</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+            </div>
+            <div class="row-1">
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/cooprate.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> For Cooprate</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/airport.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> For Airport</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+                <div class="box-1">
+                    <div class="image">
+                        <img src="{% static 'images/hour.jpg' %}" alt="somthing went wrong">
+                    </div>
+                    <h1><span style="color: black;">Car</span> Hourly/Daily Rentals
+
+</h1>
+                    <a href="#" class="sys" onclick="show()">Book Now</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- service section end here -->
+
+    <!-- why us section start here -->
+    <section id="whyus" class="whyus">
+        <div class="head">
+            <h1>Why Prakash Taxi Service</h1>
+            <div class="main-feature">
+                <div class="feature-row">
+                    <div class="feature-col">
+                        <div class="col-image">
+                            <img src="{% static 'images/car-1.webp' %}" alt="image not load">
+                            <div class="text-1">
+                                <h2>No over-pricing</h2>
+                                <p>Get cheapest price for your journey. A big pool of outstation taxi providers are waiting to serve you best in least price.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-col">
+                        <img src="{% static 'images/car-2.webp' %}" alt="image not load">
+                        <div class="text-1">
+                            <h2>Trained And Verified Drivers</h2>
+                            <p>At Prakash Taxi Service, our trained and verified drivers guarantee a secure and dependable car rental experience, showcasing expert driving skills and a dedicated commitment to customer satisfaction.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature-col">
+                        <img src="{% static 'images/car-3.webp' %}" alt="image not load">
+                        <div class="text-1">
+                            <h2>Cabs availability</h2>
+                            <p>No more off-season, no more idle cabs. Prakash Taxi Service brings thousands of taxi providers in your reach.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-col">
+                        <img src="{% static 'images/car-4.webp' %}" alt="image not load">
+                        <div class="text-1">
+                            <h2>Support 24 x 7</h2>
+                            <p>Prakash Taxi Service offers 24 x 7 customer support, ensuring round-the-clock assistance for a seamless and reliable car rental experience
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- why us section end here -->
+    <!-- most visited place section start here -->
+    <section class="place" id="place">
+        <div class="pla">
+            <h1>Most Visited Place</h1>
+        </div>
+        <div class="main-place">
+            <div class="place-row">
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/mathura.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Mathura</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/prayagraj.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Prayagraj</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/jaipur.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Jaipur</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/kasol.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Kasol</h3>
+                </div>
+            </div>
+            <div class="place-row">
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/manali.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Manali</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/mcleodganj.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Mcleodganj</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/mussoorie.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Mussoorie</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/nainital.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Nainital</h3>
+                </div>
+            </div>
+            <div class="place-row">
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/rishikesh.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Rishikesh</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/shimla.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Shimla</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/udaipur.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Udaipur</h3>
+                </div>
+                <div class="place-col">
+                    <div class="img">
+                        <img src="{% static 'images/agra.webp' %}" alt="">
+                    </div>
+                    <h3><span style="color: orangered;">Ghaziabad</span> To Agra</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- most visited place section ends here -->
+    <!-- contact us section start here -->
+    <section id="contact" class="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>
+                "Prakash Taxi Service: Driving Dreams, Delivering Excellence!"</p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon">
+                        <i class="ri-map-pin-fill"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>C 2<sup>nd</sup> Brijnagri <br> Nandgram Ghaziabad <br> 202001</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="ri-phone-fill"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>9971467542</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="ri-mail-fill"></i>
+                    </div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>omprkashpal2255@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactMap">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111986.23176096461!2d77.3429266956782!3d28.702514539308083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1b129e1e9eb%3A0x9d48ac099fa64419!2sPrakash%20Taxi%20Service%20%2Fcab%20booking%2Ftravels%2FRajnagar%20extension%2F%20Ghaziabad!5e0!3m2!1sen!2sin!4v1706453101342!5m2!1sen!2sin" width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- contact us section end here -->
+    <!-- footer section start here -->
+     <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Prakash Taxi Service</div>
+            <div class="footer-text">
+                <p>&copy; 2024 Prakash Taxi Service. All Rights Reserved.</p>
+            </div>
+            <div class="footer-contact">
+                <p>123 Main Street, Cityville, State, 12345</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@prakashtaxiservice.com</p>
+            </div>
+        </div>
+        <div class="me">
+            Made With❤️By Vivek Pal
+        </div>
+    </footer>
+    
+
+    <script src="{% static 'index.js' %}"></script>
+</body>
+
+</html>
